@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangri-la Dubai</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}" />
+    <script src="https://kit.fontawesome.com/224f6e45ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/img/logo.png">
+</head>
+
+<body>
+    <!--Cabecera, se le agrega la clase para su identificacion en el css-->
+    <header class="cabecera" id="cabecera">
+        <div class="cabecera-superior">
+            <div class="nombre-sitio">
+                <span> Equipo 1 Grupo 54</span>
+                <p><a class="link" href="/misDatos">Mi usuario</a></p>
+            
+            </div>
+            <div class="navegacion-sitio">
+                <span id="navegacion-btn">Menu <i class = "fas fa-bars"></i></span>
+            </div>
+        </div>
+        <div class="cabecera-boton flex">
+            <h2>Hotel Shangri-la Dubai</h2>
+            <h3>Calidad y Excelencia</h3>
+            <p>Convierta sus vacaciones en una experiencia inolvidable.</p>
+            <button type="button" class="btn-cabecera" onclick="location.href='#servicios';">Empezar</button>
+        </div>
+    </header>
+    <!--Fin de la cabecera-->
+    
+    <!--Barra de navegabilidad-->
+    <div class="menu" id="menu">
+        <span class="btn-cancelar" id="btn-cancelar"> 
+            <i class = "fas fa-times"></i>
+        </span>
+        <ul class="barra-menu">
+        
+            <li> <a href="#cabecera">Inicio</a></li>
+            <li> <a href="#servicios">Servicios</a></li>
+            <li> <a href="#habitaciones">Habitaciones</a></li>
+            <li> <a href="#comentarios">Comentarios</a></li>
+        </ul>
+        <button class="btn sign-up" onclick="location.href='/registro';">Registrarse</button>
+        <button class="btn log-in" onclick="location.href='/login';">Iniciar sesion</button>
+    </div>
+    <!--Fin de la barra de navegabilidad-->
+
+    <!--modulo de pantalla completa-->
+    <div id="modal"></div>
+    <!--fin de modulo de pantalla completa-->
+
+    <!--Contenido del cuerpo-->
+
+    <!--Servicios-->
+    <section class="servicios sec-width" id="servicios">
+        <div class="titulo">
+            <h2>Servicios</h2>
+        </div>
+        <div class="caja-servicios">
+
+            <!--primer servicio-->
+            <article class="servicio">
+                <div class="servicio-icono">
+                    <span>
+                        <i class = "fas fa-utensils"></i>
+                    </span>
+                </div>
+                <div class="contenido-servicio">
+                    <h2>Restaurante</h2>
+                    <p>
+                        En nuestros restaurantes, tenemos lo necesario para sorprender a todos los gustos, platos exquisitos y originales del Hotel Shangri-la Dubai
+                    </p>
+                </div>
+            </article>
+            <!-- fin primer servicio-->
+
+            <!--segundo servicio-->
+            <article class="servicio">
+                <div class="servicio-icono">
+                    <span>
+                        <i class = "fas fa-swimming-pool"></i>
+                    </span>
+                </div>
+                <div class="contenido-servicio">
+                    <h2>Piscina</h2>
+                    <p>
+                        Nuestra piscina renovada totalmente es una zona pensada para el descanso y la diversión, climatizada para su comodidad <br> Horario de atención: De lunes a sábado de 7:00 am a 9:30 pm, domingos y festivos de 7:00 am a 7:00 pm.
+                    </p>
+
+                </div>
+            </article>
+            <!-- fin segundo  servicio-->
+
+            <!--tercer servicio-->
+            <article class="servicio">
+                <div class="servicio-icono">
+                    <span>
+                        <i class = "fas fa-broom"></i>
+                    </span>
+                </div>
+                <div class="contenido-servicio">
+                    <h2>limpieza</h2>
+                    <p>
+                        En respuesta al coronavirus (COVID-19), el alojamiento aplica medidas sanitarias y de seguridad adicionales en estos momentos
+                    </p>
+                </div>
+            </article>
+            <!-- fin tercer servicio-->
+            <!--primer servicio-->
+            <article class="servicio">
+                <div class="servicio-icono">
+                    <span>
+                        <i class = "fas fa-door-closed"></i>
+                    </span>
+                </div>
+                <div class="contenido-servicio">
+                    <h2>Caja Fuerte</h2>
+                    <p>
+                        El Hotel dispone de cajas fuertes de seguridad en recepción a disposición de los Clientes. <br> Estas serán gestionadas y controladas por el departamento de recepción.
+                    </p>
+                </div>
+            </article>
+            <!-- fin Cuarto servicio-->
+        </div>
+    </section>
+
+
+    <!--Habitaciones-->
+
+    <section class="habitaciones sec-width" id="habitaciones">
+        <div class="titulo">
+            <h2>Habitaciones</h2>
+        </div>
+        <div class="caja-habitaciones">
+            <!--primera habitacion-->
+
+            <article class="habitacion">
+                <div class="habitacion-imagen">
+                    <img src="../static/img/imagen1.png" alt="habitacion imagen">
+                </div>
+                <div class="habitacion-texto">
+                    <h3>Habitacion estandar</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Cancelación GRATIS antes de las 23:59 PM de la fecha de su reserva
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> SIN PAGO POR ADELANTADO - Pagarás en el alojamiento
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Desayuno incluido
+                        </li>
+                    </ul>
+                    <p>
+                        Habitaciones bellamente decoradas con vista al mar, con productos modernos, ropa de cama fresca, con una decoración moderna y elegante, para disfrutar de unas vacaciones agradables. Tu hogar en Dubai para disfrutar de nuestros mejores paisajes. Las habitaciones
+                        con vista al mar están sujetas a disponibilidad y se pueden aplicar cargos adicionales. <br> mezclamos la elegancia, los olores y los sabores de los diferentes productos que se ofrecen y creamos un lugar
+                        ideal para pensar, trabajar y soñar....
+                    </p>
+                    <p class="precio">
+                        <span>$99.00 /</span> por noche
+                    </p>
+                    <button type="button" class="btn" onclick="location.href='/reserva';">Reserva ahora</button>
+                </div>
+            </article>
+            <!--fin primera habitacion-->
+            <!--segunda habitacion-->
+
+            <article class="habitacion">
+                <div class="habitacion-imagen">
+                    <img src="../static/img/imagen2.png" alt="habitacion imagen">
+                </div>
+                <div class="habitacion-texto">
+                    <h3>Habitacion estandar</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Cancelación GRATIS antes de las 23:59 PM de la fecha de su reserva
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> SIN PAGO POR ADELANTADO - Pagarás en el alojamiento
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Desayuno incluido
+                        </li>
+                    </ul>
+                    <p>
+                        Habitaciones bellamente decoradas con vista al mar, con productos modernos, ropa de cama fresca, con una decoración moderna y elegante, para disfrutar de unas vacaciones agradables. Tu hogar en Dubai para disfrutar de nuestros mejores paisajes. Las habitaciones
+                        con vista al mar están sujetas a disponibilidad y se pueden aplicar cargos adicionales. <br> mezclamos la elegancia, los olores y los sabores de los diferentes productos que se ofrecen y creamos un lugar
+                        ideal para pensar, trabajar y soñar....
+                    </p>
+                    <p class="precio">
+                        <span>$99.00 /</span> por noche
+                    </p>
+                    <button type="button" class="btn" onclick="location.href='/reserva';">Reserva ahora </button>
+                </div>
+            </article>
+            <!--fin segunda habitacion-->
+            <!--tercera habitacion-->
+
+            <article class="habitacion">
+                <div class="habitacion-imagen">
+                    <img src="../static/img/imagen3.png" alt="habitacion imagen">
+                </div>
+                <div class="habitacion-texto">
+                    <h3>Habitacion estandar</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Cancelación GRATIS antes de las 23:59 PM de la fecha de su reserva
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> SIN PAGO POR ADELANTADO - Pagarás en el alojamiento
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i> Desayuno incluido
+                        </li>
+                    </ul>
+                    <p>
+                        Habitaciones bellamente decoradas con vista al mar, con productos modernos, ropa de cama fresca, con una decoración moderna y elegante, para disfrutar de unas vacaciones agradables. Tu hogar en Dubai para disfrutar de nuestros mejores paisajes. Las habitaciones
+                        con vista al mar están sujetas a disponibilidad y se pueden aplicar cargos adicionales. <br> mezclamos la elegancia, los olores y los sabores de los diferentes productos que se ofrecen y creamos un lugar
+                        ideal para pensar, trabajar y soñar....
+                    </p>
+                    <p class="precio">
+                        <span>$99.00 /</span> por noche
+                    </p>
+                    <button type="button" class="btn" onclick="location.href='/reserva';">Reserva ahora </button>
+                </div>
+            </article>
+            <!--fin tercera habitacion-->
+        </div>
+    </section>
+
+    <section class="comentarios" id="comentarios">
+        <div class="sec-width">
+            <div class="titulo">
+                <h2>Comentarios</h2>
+            </div>
+            <div class="caja-comentarios">
+                <!--Primer comentario-->
+                <div class="usuario">
+                    <div class="calificacion">
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "far fa-star"></i></span>
+                    </div>
+                    <h3>Nos encanto!</h3>
+                    <p>
+                        Excelente atención, las vistas del hotel son muy bonitas y nuestra habitación impecable! Aunque el parqueadero no es gratis ya que usan el del centro comercial, el hotel asume el 75% del costo
+                    </p>
+                    <img src="../static/img/cus1.jpg" alt="usuario imagen">
+                    <span> Elizabeth Castro, Barcelona </span>
+                </div>
+                <!-- fin del primer comentario-->
+                <!--segundo comentario-->
+                <div class="usuario">
+                    <div class="calificacion">
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "far fa-star"></i></span>
+                    </div>
+                    <h3>Muy comodo!</h3>
+                    <p>Las instalaciones son increíbles, la piscina y la sensación de continuidad con el mar es imperdible. El gimnasio está muy bien dotado y no tiene mucha afluencia. Pero lo que más se recalca y lo hace único es el personal, son muy queridos
+                        sobre todo en el restaurante Erika y Rafael muy buenos meseros que nos aconsejaron durante toda nuestra estadía. Repetiría mil veces esta experiencia.
+                    </p>
+                    <img src="../static/img/cus2.jpg" alt="usuario imagen">
+                    <span> Martha Lucia pachecho, Honduras </span>
+                </div>
+                <!-- fin del segundo comentario-->
+                <!--tercer comentario-->
+                <div class="usuario">
+                    <div class="calificacion">
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "fas fa-star"></i></span>
+                        <span><i class = "far fa-star"></i></span>
+                    </div>
+                    <h3>Mucho confort y muy buena atención</h3>
+                    <p>El confort y la atención del hotel es extremadamente bueno. La habitación muy cómoda y amplia. El desayuno es excelente y no hay que preocuparse por toallas por que te las dan para que lleves a la playa y si entras a la pisicina, te
+                        dan unas completamente nuevas.
+                    </p>
+                    <img src="../static/img/cus3.jpg" alt="usuario imagen">
+                    <span> Pedro Luis Gutierrez, Colombia </span>
+                </div>
+                <!-- fin del tercer comentario-->
+            </div>
+        </div>
+    </section>
+
+    <!--pie de pagina-->
+
+    <footer class="pie-pagina">
+        <div class="caja-pagina">
+            <div>
+                <h2>Sobre nosotros</h2>
+                <p>
+                    Hoy en día, la excelencia de nuestro servicio es legendaria dentro de la industria hotelera, nos esforzamos por convertirnos en el grupo hotelero más querido que une a las personas para vivir, trabajar, jugar, comer y descansar bien.
+                </p>
+                <ul class="redes-iconos">
+                    <li class="flex">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </li>
+                    <li class="flex">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </li>
+                    <li class="flex">
+                        <i class="fa fa-instagram fa-2x"></i>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>Enlaces</h2>
+                <a href="#">Blog</a>
+                <a href="#">Habitaciones</a>
+                <a href="#">VIP</a>
+                <a href="#">Tarjetas regalo</a>
+            </div>
+            <div>
+                <h2>Politica de privacidad</h2>
+                <a href="#">politicas</a>
+                <a href="#">Sobre nosotros </a>
+                <a href="#">Contactenos</a>
+                <a href="#">Servicios</a>
+            </div>
+            <div>
+                <h2>Dudas o Inquietudes</h2>
+                <div class="contacto">
+                    <span> <i class = "fas fa-map-marker-alt"></i> </span>
+                    <span>Calle falsa 123, Dubai</span>
+                </div>
+                <div class="contacto">
+                    <span>
+                        <i class = "fas fa-phone-alt"></i>
+                    </span>
+                    <span>
+                        +84545 37534 48
+                    </span>
+                </div>
+                <div class="contacto">
+                    <span>
+                        <i class = "fas fa-envelope"></i>
+                    </span>
+                    <span>
+                        info@domain.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Fin del pie de pagina-->
+
+    <script src="{{ url_for('static', filename='js/javascripts.js') }}"></script>
+</body>
+
+</html>

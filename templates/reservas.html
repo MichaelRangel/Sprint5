@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangri-la Dubai</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}" />
+    <script src="https://kit.fontawesome.com/224f6e45ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/img/logo.png">
+</head>
+
+<body>
+    <!--Cabecera, se le agrega la clase para su identificacion en el css-->
+    <header class="cabecera1" id="cabecera">
+        <div class="cabecera-superior">
+            <div class="cabecera-boton flex">
+                <h2>Hotel Shangri-la Dubai</h2>
+            </div>
+            <div class="navegacion-sitio">
+                <span id="navegacion-btn">Menu <i class="fas fa-bars"></i></span>
+            </div>
+        </div>
+        <div class="cabecera-boton flex">
+        </div>
+    </header>
+    <!--Fin de la cabecera-->
+
+    <!--Barra de navegabilidad-->
+    <div class="menu" id="menu">
+
+        <ul class="barra-menu">
+            <li> <a class="link" href="/">Inicio</a></li>
+            <li> <a class="link" href="/#servicios">Servicios</a></li>
+            <li> <a class="link" href="/#habitaciones">Habitaciones</a></li>
+            <li> <a class="link" href="/#comentarios">Comentarios</a></li>
+        </ul>
+    </div>
+    <!--Fin de la barra de navegabilidad-->
+
+
+    <!--Reservas-->
+
+    <div class="reserva">
+        <form class="form-reserva">
+            <div class="form-datos">
+                <label for="ingreso"> fecha de ingreso</label>
+                <input type="date" id="fecha-ingreso">
+            </div>
+            <div class="form-datos">
+                <label for="salida">Fecha de Salida</label>
+                <input type="date" id="fecha-salida">
+            </div>
+            <div class="form-datos">
+                <label for="adultos">Adultos:</label>
+                <input type="number" min="1" value="1" id="adultos">
+            </div>
+            <div class="form-datos">
+                <label for="ninos">Niños</label>
+                <input type="number" min="1" value="1" id="ninos">
+            </div>
+            <div class="form-datos">
+                <label for="rooms">Habitaciones: </label>
+                <input type="number" min="1" value="1" id="rooms">
+            </div>
+            <div class="form-datos">
+                <button type="button" class="btn" onclick="location.href='/reserva';">reserva ahora</button>
+            </div>
+        </form>
+    </div>
+    <!--fin de la reserva-->
+    <script src="{{ url_for('static', filename='js/javascripts.js') }}"></script>
+</body>

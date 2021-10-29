@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Habitaciones</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+	{% if session['rol'] == 'superadministrador' or session['rol'] == 'administrador' %}
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				Shangri-La Dubai <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<img src="/static/img/avatars/AdminMaleAvatar.png" alt="UserIcon">
+					<figcaption class="text-center text-titles">{{session['nombre']}}</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a class="link" href="/misDatos" title="Mis datos">
+							<i class="zmdi zmdi-account-circle"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#!" title="Salir del sistema" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a class="link" href="/">
+						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Inicio
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i
+							class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a class="link" href="/ListaDeHabitaciones"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>
+								Habitaciones</a>
+						</li>
+						<li>
+							<a class="link" href="/NuevaHabitacion"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Nueva Habitación</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i
+							class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						{% if session['rol'] == 'superadministrador'%}
+						<li>
+							<a class="link" href="/ListaDeAdministradores"><i class="zmdi zmdi-account zmdi-hc-fw"></i>
+								Administradores</a>
+						</li>
+						<li>
+							<a class="link" href="listaDeClientes"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+						</li>
+						{% endif %}
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar">
+			<ul class="full-box list-unstyled text-right">
+				<li class="pull-left">
+					<a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Content page -->
+		<div class="container-fluid">
+			<div class="page-header">
+				<h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Administración <small>Shangri-La
+						Dubai</small></h1>
+			</div>
+		</div>
+
+		<!-- Panel nuevo libro -->
+		<div class="container-fluid">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="zmdi zmdi-plus"></i> &nbsp; NUEVA HABITACION</h3>
+				</div>
+				<div class="panel-body">
+					<form method="POST">
+						<fieldset>
+							<legend><i class="zmdi zmdi-library"></i> &nbsp; Información básica</legend>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label">Código de la Habitación *</label>
+											<input pattern="[a-zA-Z0-9-]{1,30}" class="form-control" type="text" name="codigoHabitacion" id="codigoHabitacion" required="" maxlength="30">
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label">Piso *</label>
+											<input pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,30}" class="form-control" type="text" name="numPiso"  id="numPiso" required="" maxlength="30">
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend><i class="zmdi zmdi-money-box"></i> &nbsp; Precio</legend>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label">Precio</label>
+											<input pattern="[0-9.]{1,7}" class="form-control" type="text" name="precio" id="precio" maxlength="7">
+										</div>
+									</div>
+								</div>
+						</fieldset>
+						<p class="text-center" style="margin-top: 20px;">
+							<button type="submit" class="btn btn-info btn-raised btn-sm"><i
+									class="zmdi zmdi-floppy"></i> Guardar</button>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<!--====== Scripts -->
+	<script src="../static/js/jquery-3.1.1.min.js"></script>
+	<script src="../static/js/sweetalert2.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/material.min.js"></script>
+	<script src="../static/js/ripples.min.js"></script>
+	<script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../static/js//main.js"></script>
+	<script>
+		$.material.init();
+	</script>
+	{% endif %}
+</body>
+
+</html>

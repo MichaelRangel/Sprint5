@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport"content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/misEstilos.css') }}" />
+    <meta charset="UTF-8" />
+</head>
+
+
+<body>
+    <form class="formulario" method="POST">
+        
+        <h1>Inicio de sesión</h1>
+        
+        <div class="contenedor">
+            
+            <div class="input-contenedor">
+                <input type="text" name="usuario" id="usuario" placeholder="Usuario"/>
+                <i class="fas fa-user icon"></i>
+            </div>
+            <span class="error" id="errorUsername"></span>
+            
+            <div class="input-contenedor">
+                <input type="password" name="password" placeholder="Contraseña">
+                <i class="fas fa-key icon"></i>
+            </div>
+            <span class="error" id="errorPassword"></span>
+            
+            <button type="submit" value="Enviar" id="botonEnviar" class="button">Iniciar Sesión</button>
+
+            <div>
+                {% for mensaje in get_flashed_messages() %}
+                <div class="error" style="color: brown; text-align: center;" ><b>{{ mensaje }}</b></div>
+                {% endfor %}
+            </div>
+            
+
+            <div class="enlaces">
+            
+                <p style="text-align: center;"> <a class="link" type="link" href="/registro"> ¿No tienes cuenta? </a></p>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
